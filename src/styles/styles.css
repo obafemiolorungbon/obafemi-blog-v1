@@ -1,0 +1,711 @@
+/* HOME PAGE STYLES */
+:root {
+  --padding-rl: calc(100vw - 96vw);
+  --padding-tb: calc(100vh - 98vh);
+  --inner-height: calc(var(--padding-tb) + var(--padding-tb));
+  --inner-width: calc(var(--padding-tb) + var(--padding-tb));
+  --card-border-radius: 0.75rem;
+  --romans: "Roboto", sans-serif;
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.HomePage_Layout {
+  background-color: #e9eaee;
+  padding: var(--padding-tb) var(--padding-rl);
+  display: flex;
+  justify-content: center;
+}
+
+.HomePage_Layout_Inner {
+  width: calc(100vw - var(--inner-width));
+  height: calc(100vh - var(--inner-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Top-Cards {
+  height: 45%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Bottom-Cards {
+  height: 50%;
+}
+
+.TopWideCard_Container {
+  background-color: white;
+  width: 80%;
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.TopWideCard_Wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TopWideCard_Image {
+  border-radius: var(--card-border-radius) !important;
+  width: 50%;
+  height: 100%;
+  background-image: url("../assets/lamp.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.TopWideCard_Image img {
+  border-radius: var(--card-border-radius);
+}
+.TopWideCard_Text {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  flex-direction: column;
+  padding-right: 2%;
+  justify-content: space-evenly;
+}
+.TopWideCard_Header {
+  height: 30%;
+  padding-right: 2.5%;
+}
+.TopWideCard_Header p {
+  font-weight: 500;
+  font-size: 1.5vw;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+}
+.TopWideCard_Content {
+  height: 40%;
+}
+.TopWideCard_Content p {
+  line-height: 1.5;
+  color: #7e8689;
+  font-size: 1.1vw;
+  font-family: "Roboto", sans-serif;
+}
+.TopWideCard_Author {
+  height: 25%;
+}
+.TopWideCard_Author_Card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TopWideCard_Author_Image {
+  max-width: 50px;
+  aspect-ratio: auto;
+  border-radius: 50%;
+  background-color: white;
+}
+.TopWideCard_Author_Image img {
+  width: 100%;
+  height: 100%;
+}
+.TopWideCard_Author_Info {
+  width: 80%;
+}
+.TopWideCard_Author_Info p:first-child {
+  font-size: 1.2vw;
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+.TopWideCard_Author_Info p:last-child {
+  font-size: 1vw;
+  color: #7e8689;
+  font-family: "Roboto", sans-serif;
+}
+.TopWideCard_Link {
+  max-width: 5%;
+  aspect-ratio: auto;
+}
+.TopWideCard_Link img {
+  width: 100%;
+}
+
+/* TOP SIDE CARD */
+.TopSideCard_Container {
+  width: 15%;
+  background-color: white;
+  border-radius: var(--card-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+.TopSideCard_Wrapper {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.TopSideCard_IconContainer {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TopSideCard_Icons {
+  background-color: #edf1f4;
+  height: 100%;
+  width: 21%;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TopSideCard_Icons:hover {
+  background-color: black;
+}
+
+.TopSideCard_Icons img {
+  width: 70%;
+}
+
+.TopSideCard_Text {
+  width: 70%;
+}
+.TopSideCard_Text p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9vw;
+  color: #7e8689;
+}
+
+/* BOTTOM CARDS */
+
+.BottomCardsWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.BottomCardLeftContainer {
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  border-radius: var(--card-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
+.BottomCardLeftWrapper {
+  width: 90%;
+  height: 90%;
+  border-radius: var(--card-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.BottomCardLeftImage {
+  height: 50%;
+  width: 100%;
+  background-color: wheat;
+  border-radius: var(--card-border-radius);
+  background-image: url("../assets/cup\ of\ tea.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.BottomCardLeftText {
+  height: 45%;
+  border-radius: var(--card-border-radius);
+}
+
+.BottomCardLeftTextHeader p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.BottomCardLeftTextProfile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BottomCardLeftInfo {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.BottomCardLeftInfo p:first-child {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.BottomCardLeftInfo p:last-child {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8vw;
+  font-weight: 400;
+  color: #7e8689;
+}
+.BottomCardProfileImage {
+  width: 20%;
+  height: 100%;
+}
+.BottomCardProfileImage img {
+  width: 100%;
+}
+.BottomCardRightContainer {
+  width: 75%;
+  height: 100%;
+  display: flex;
+}
+
+.BottomCardRightWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BottomTopCards,
+.BottomBottomCards {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.BottomTopLeftCard {
+  width: 55%;
+  height: 100%;
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BottomTopRightCard {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.BottomBottomLeftCard {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}
+.BottomBottomRightCard {
+  width: 25%;
+  border-radius: var(--card-border-radius);
+  height: 100%;
+}
+.BottomBottomRightCardWrapper {
+  width: 100%;
+  height: 100%;
+}
+.BottomBottomRightTopCard {
+  height: 50%;
+  width: 100%;
+}
+.BottomBottomRightTopCardNav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.BottomNavigate {
+  width: 20%;
+  max-width: 90px;
+  max-height: 90px;
+  height: 70%;
+  aspect-ratio: auto;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.BottomNavigate:hover {
+  background-color: #f4f4f5;
+}
+.BottomNavigate img {
+  width: 60%;
+}
+.BottomBottomRightBottomCard {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  height: 50%;
+  background-color: white;
+  border-radius: var(--card-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BottomTopLeftCardWrapper {
+  width: 95%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--card-border-radius);
+}
+
+.SearchBar {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  border-radius: var(--card-border-radius);
+  background-color: #f1f4f9;
+}
+
+.inputWrapper {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f4f9;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.SearchBar input {
+  background-color: #f1f4f9;
+  outline: none;
+  border: none;
+  width: 90%;
+  height: 70%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  font-size: 1.1vw;
+  font-family: var(--romans);
+  color: #7e8689;
+}
+.searcIconContainer {
+  width: 10%;
+  background-color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--card-border-radius);
+}
+
+.searcIconContainer img {
+  width: 60%;
+}
+
+.Tags {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  justify-content: space-between;
+}
+.Tags p {
+  font-family: var(--romans);
+  font-size: 1vw;
+  color: #7e8689;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.BottomTopRightCardWrapper {
+  width: 95%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--card-border-radius);
+}
+
+.BottomTopRightCardMusicImage {
+  width: 45%;
+  height: 100%;
+  border-radius: var(--card-border-radius);
+  background-image: url("../assets/music-art-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.BottomTopRightCardMusicControl {
+  width: 50%;
+  border-radius: var(--card-border-radius);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.BottomTopRightCardMusicControllerIcon {
+  height: 30%;
+  width: 17%;
+  cursor: pointer;
+}
+
+.BottomTopRightCardMusicControllerIcon img {
+  width: 100%;
+  height: 100%;
+}
+
+.BottomTopRightCardMusicInfo {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.BottomTopRightCardMusicInfo p {
+  font-family: var(--romans);
+  font-size: 1.1vw;
+  font-weight: 600;
+}
+
+.BottomTopRightCardMusicStats {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.BottomTopRightCardMusicStats p {
+  font-weight: 500;
+  font-size: 0.9vw;
+  color: #7e8689;
+  font-family: var(--romans);
+}
+.BottomTopRightCardMusicStats img {
+  width: 12%;
+  height: 100%;
+  margin-right: 4px;
+}
+.ProfileCardWrapper,
+.FeedBackCardWrapper {
+  width: 95%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--card-border-radius);
+}
+
+.FeedBackCardWrapper {
+  flex-direction: column;
+}
+
+.ProfileImage {
+  width: 30%;
+  height: 100%;
+  background-color: #f6f7f9;
+  border-radius: 0.75rem;
+}
+.ProfileImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.ProfileInfo {
+  width: 65%;
+  height: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+.ProfileInfoName {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.ProfileInfoName p:first-child {
+  font-family: var(--romans);
+  font-size: 1.1vw;
+  font-weight: 600;
+}
+.ProfileInfoName p:last-child {
+  font-family: var(--romans);
+  font-size: 0.85vw;
+  font-weight: 500;
+  color: #7e8689;
+}
+
+.ProfileInfoStats {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  justify-content: center;
+  background-color: #f1f4f9;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.ProfileInfoStatsWrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.Stats {
+  width: 30%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.Stats p:first-child {
+  font-family: var(--romans);
+  font-weight: 500;
+  font-size: 0.6vw;
+  color: #7e8689;
+}
+.Stats p:last-child {
+  font-family: var(--romans);
+  font-weight: 500;
+  font-size: 1.2vw;
+}
+
+.ProfileInfoCTA {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.ProfileInfoCTAWrapper {
+  width: 100%;
+  display: flex;
+  height: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProfileInfoCTAChat {
+  width: 45%;
+  height: 100%;
+}
+
+.ProfileInfoCTAChat button {
+  width: 100%;
+  height: 80%;
+}
+
+.ProfileInfoCTAWrapper .ProfileInfoCTAChat:first-child button {
+  border: none;
+  outline: #f1f1f1 solid 1px;
+  background-color: white;
+  border-radius: 0.25rem;
+  color: #7e8689;
+  font-size: 0.8vw;
+  cursor: pointer;
+  font-family: var(--romans);
+}
+.ProfileInfoCTAWrapper .ProfileInfoCTAChat:last-child button {
+  border: none;
+  outline: #f1f1f1 solid 1px;
+  background-color: white;
+  border-radius: 0.25rem;
+  background-color: black;
+  color: #e9eaee;
+  cursor: pointer;
+  font-size: 0.8vw;
+  font-family: var(--romans);
+}
+
+.BottomBottomRightBottomCardSelections {
+  height: 83%;
+  width: 94%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: var(--card-border-radius);
+}
+
+.selections {
+  background-color: #f1f4f9;
+  width: max-content;
+  border-radius: 0.25rem;
+  padding: 0 4px;
+  display: flex;
+  height: 45%;
+  margin-right: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.selections:hover {
+  background-color: black;
+}
+
+.selections p {
+  font-family: var(--romans);
+  font-size: 0.9vw;
+  color: #7e8689;
+}
+
+.FeedbackBox {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FeedbackBox textarea {
+  width: 90%;
+  border: none;
+  background-color: #f1f4f9;
+  height: 90%;
+  padding: 2.5% 2.5%;
+  resize: none;
+  font-family: var(--romans);
+  color: #7e8689;
+  font-size: 1vw;
+  border-radius: var(--card-border-radius);
+}
+
+.FeedbackBox textarea:focus {
+  outline: none;
+  border: none;
+}
+
+.SubmitFeedback {
+  width: 97%;
+  height: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.SubmitFeedback button {
+  width: 30%;
+  height: 100%;
+  border: none;
+  outline: #f1f1f1 solid 1px;
+  background-color: white;
+  border-radius: 0.25rem;
+  background-color: black;
+  color: #e9eaee;
+  cursor: pointer;
+  font-size: 0.8vw;
+  font-family: var(--romans);
+}
