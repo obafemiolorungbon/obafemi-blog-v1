@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Memoji from "../../assets/avatar4.png";
 import CuriousMemoji from "../../assets/avatar6.png";
 import Forward from "../../assets/forward.png";
@@ -13,38 +13,29 @@ import EyeIcon from "../../assets/EyeIconSeen.png";
 import ProfilePic from "../../assets/Obafemi Olorungbon.png";
 import NextForwardIcon from "../../assets/NextForwardIcon.png";
 import PrevIcon from "../../assets/PrevForwardIcon.png";
-function TopWideCard() {
+import { CustomCarousel } from "../Carousel/CustomElasticCarousel";
+function TopWideCard({ post }) {
   return (
-    <div className="TopWideCard_Container">
-      <div className="TopWideCard_Wrapper">
-        <div className="TopWideCard_Image"></div>
-        <div className="TopWideCard_Text">
-          <div className="TopWideCard_Header">
-            <p>
-              Green Plants are going to Extinct about 500 times faster than they
-              should, study finds
-            </p>
-          </div>
-          <div className="TopWideCard_Content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi...
-            </p>
-          </div>
-          <div className="TopWideCard_Author">
-            <div className="TopWideCard_Author_Card">
-              <div className="TopWideCard_Author_Image">
-                <img alt="author" src={Memoji} />
-              </div>
-              <div className="TopWideCard_Author_Info">
-                <p>Obafemi Joseph</p>
-                <p>June 20, 2021</p>
-              </div>
-              <div className="TopWideCard_Link">
-                <img alt="forward" src={Forward} />
-              </div>
+    <div className="TopWideCard_Wrapper">
+      <div className="TopWideCard_Image"></div>
+      <div className="TopWideCard_Text">
+        <div className="TopWideCard_Header">
+          <p>{post.title}</p>
+        </div>
+        <div className="TopWideCard_Content">
+          <p dangerouslySetInnerHTML={{ __html: post.brief }}></p>
+        </div>
+        <div className="TopWideCard_Author">
+          <div className="TopWideCard_Author_Card">
+            <div className="TopWideCard_Author_Image">
+              <img alt="author" src={Memoji} />
+            </div>
+            <div className="TopWideCard_Author_Info">
+              <p>{post.author.username}</p>
+              <p>June 20, 2021</p>
+            </div>
+            <div className="TopWideCard_Link">
+              <img alt="forward" src={Forward} />
             </div>
           </div>
         </div>
@@ -102,7 +93,7 @@ function TopSideCard() {
   );
 }
 
-function BottomCards() {
+function BottomCards({ NavigatorLeft, NavigatorRight, navigate }) {
   return (
     <div className="BottomCardsWrapper">
       <div className="BottomCardLeftContainer">
@@ -222,12 +213,8 @@ function BottomCards() {
               <div className="BottomBottomRightCardWrapper">
                 <div className="BottomBottomRightTopCard">
                   <div className="BottomBottomRightTopCardNav">
-                    <div className="BottomNavigate">
-                      <img alt="Navigate" src={PrevIcon} />
-                    </div>
-                    <div className="BottomNavigate">
-                      <img alt="Navigate" src={NextForwardIcon} />
-                    </div>
+                    <NavigatorLeft onclick={navigate} />
+                    <NavigatorRight onclick={navigate} />
                   </div>
                 </div>
                 <div className="BottomBottomRightBottomCard">
@@ -258,15 +245,62 @@ function BottomCards() {
   );
 }
 
-export default function Cards(props) {
+function PrevNavigation({ onclick }) {
+  return (
+    <div
+      onClick={() => {
+        onclick();
+      }}
+      className="BottomNavigate"
+    >
+      <img alt="Navigate" src={PrevIcon} />
+    </div>
+  );
+}
+
+function NextNavigation({ onclick }) {
+  return (
+    <div
+      onClick={() => {
+        onclick();
+      }}
+      className="BottomNavigate"
+    >
+      <img alt="Navigate" src={NextForwardIcon} />
+    </div>
+  );
+}
+
+export default function Cards({ posts }) {
+  const PrevNavigate = useRef(null);
+  const navigateType = useRef(null);
+  console.log(PrevNavigate.current);
+  function click() {
+    console.log(PrevNavigate);
+    PrevNavigate.current.click();
+  }
   return (
     <>
       <div className="Top-Cards">
-        <TopWideCard />
+        <div className="TopWideCard_Container">
+          <CustomCarousel
+            renderedArrow={PrevNavigate}
+            navigateType={navigateType}
+          >
+            {posts &&
+              posts.map((post, index) => (
+                <TopWideCard key={index} post={post}></TopWideCard>
+              ))}
+          </CustomCarousel>
+        </div>
         <TopSideCard />
       </div>
       <div className="Bottom-Cards">
-        <BottomCards />
+        <BottomCards
+          NavigatorLeft={PrevNavigation}
+          NavigatorRight={NextNavigation}
+          navigate={click}
+        />
       </div>
     </>
   );
