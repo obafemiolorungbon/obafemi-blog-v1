@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import homepageReducer from "./pages/HomePage/redux/reducer.redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { hashnodeApi } from "./utils/API_Handler";
