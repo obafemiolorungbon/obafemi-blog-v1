@@ -1,8 +1,24 @@
-import axios from "axios";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export async function GetData(url) {
-  return axios.get(url).then((data) => console.log(data));
-}
+export const hashnodeApi = createApi({
+  reducerPath: "homepage",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api.hashnode.com/" }),
+  endpoints: (builder) => ({
+    getPostsByUser: builder.query({
+      query: (query) => ({
+        url: "",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: query,
+      }),
+      transformResponse: (response) => response?.data.user.publication.posts,
+    }),
+  }),
+});
+
+export const { useGetPostsByUserQuery } = hashnodeApi;
 
 export async function postGraphQL(query, variables) {
   try {

@@ -1,6 +1,6 @@
 import Carousel from "react-elastic-carousel";
 
-export function CustomCarousel({ children, renderedArrow, navigateType }) {
+export function CustomCarousel({ children, renderedArrow }) {
   return (
     <Carousel
       itemsToShow={1}

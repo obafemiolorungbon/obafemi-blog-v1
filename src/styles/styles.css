@@ -41,11 +41,12 @@
   border-radius: var(--card-border-radius);
   padding: 10px;
   box-shadow: var(--box-shadow);
+  overflow: hidden;
 }
 
 .TopWideCard_Wrapper {
   width: 100%;
-  height: 100%;
+  height: 40vh;
   display: flex;
   justify-content: space-between;
 }
@@ -53,8 +54,7 @@
 .TopWideCard_Image {
   border-radius: var(--card-border-radius) !important;
   width: 50%;
-  height: 200px;
-  background-image: url("../assets/lamp.png");
+  height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 .TopWideCard_Text {
   display: flex;
   width: 45%;
-  height: 100%;
+  height: 95%;
   flex-direction: column;
   padding-right: 2%;
   justify-content: space-evenly;

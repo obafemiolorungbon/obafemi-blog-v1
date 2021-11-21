@@ -7,6 +7,7 @@ export const GET_USER_ARTICLES = `
                     brief
                     slug
                     coverImage
+                    dateAdded
                     contentMarkdown
                     followersCount
                     totalReactions

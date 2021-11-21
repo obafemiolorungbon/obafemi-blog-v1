@@ -15,9 +15,13 @@ import NextForwardIcon from "../../assets/NextForwardIcon.png";
 import PrevIcon from "../../assets/PrevForwardIcon.png";
 import { CustomCarousel } from "../Carousel/CustomElasticCarousel";
 function TopWideCard({ post }) {
+  const date = new Date(post.dateAdded);
   return (
     <div className="TopWideCard_Wrapper">
-      <div className="TopWideCard_Image"></div>
+      <div
+        className="TopWideCard_Image"
+        style={{ backgroundImage: `url(${post.coverImage})` }}
+      ></div>
       <div className="TopWideCard_Text">
         <div className="TopWideCard_Header">
           <p>{post.title}</p>
@@ -32,7 +36,7 @@ function TopWideCard({ post }) {
             </div>
             <div className="TopWideCard_Author_Info">
               <p>{post.author.username}</p>
-              <p>June 20, 2021</p>
+              <p>{date.toDateString()}</p>
             </div>
             <div className="TopWideCard_Link">
               <img alt="forward" src={Forward} />
@@ -273,7 +277,6 @@ function NextNavigation({ onclick }) {
 
 export default function Cards({ posts }) {
   const PrevNavigate = useRef(null);
-  const navigateType = useRef(null);
   function click() {
     PrevNavigate.current.click();
   }
@@ -281,10 +284,7 @@ export default function Cards({ posts }) {
     <>
       <div className="Top-Cards">
         <div className="TopWideCard_Container">
-          <CustomCarousel
-            renderedArrow={PrevNavigate}
-            navigateType={navigateType}
-          >
+          <CustomCarousel renderedArrow={PrevNavigate}>
             {posts &&
               posts.map((post, index) => (
                 <TopWideCard key={index} post={post}></TopWideCard>
