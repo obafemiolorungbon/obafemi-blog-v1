@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Memoji from "../../assets/avatar4.png";
 import CuriousMemoji from "../../assets/avatar6.png";
 import Forward from "../../assets/forward.png";
@@ -274,9 +274,7 @@ function NextNavigation({ onclick }) {
 export default function Cards({ posts }) {
   const PrevNavigate = useRef(null);
   const navigateType = useRef(null);
-  console.log(PrevNavigate.current);
   function click() {
-    console.log(PrevNavigate);
     PrevNavigate.current.click();
   }
   return (
