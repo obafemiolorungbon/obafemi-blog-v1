@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Memoji from "../../assets/avatar4.png";
 import CuriousMemoji from "../../assets/avatar6.png";
 import Forward from "../../assets/forward.png";
@@ -14,10 +14,14 @@ import ProfilePic from "../../assets/Obafemi Olorungbon.png";
 import NextForwardIcon from "../../assets/NextForwardIcon.png";
 import PrevIcon from "../../assets/PrevForwardIcon.png";
 import { CustomCarousel } from "../Carousel/CustomElasticCarousel";
-function TopWideCard({ post }) {
+import { ButtonGroup, Col, Offcanvas, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { set_active_post } from "../../pages/HomePage/redux/reducer.redux";
+import { selectActivePost } from "../../pages/HomePage/redux/selectors";
+function TopWideCard({ post, ...props }) {
   const date = new Date(post.dateAdded);
   return (
-    <div className="TopWideCard_Wrapper">
+    <div className="TopWideCard_Wrapper" onClick={() => props.setPost(post)}>
       <div
         className="TopWideCard_Image"
         style={{ backgroundImage: `url(${post.coverImage})` }}
@@ -275,8 +279,43 @@ function NextNavigation({ onclick }) {
   );
 }
 
+const Drawer = (props) => {
+  const activePost = useSelector(selectActivePost);
+
+  return (
+    <>
+      {activePost && (
+        <Offcanvas placement="end" show={props.open} onHide={props.handleClose}>
+          <Offcanvas.Header>
+            <p>{props.post.brief}</p>
+          </Offcanvas.Header>
+          <Offcanvas.Header>
+            <p>{props.post.title}</p>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Row>
+              <Col>{props.post.title}</Col>
+            </Row>
+
+            <ButtonGroup type="submit" width={200}></ButtonGroup>
+          </Offcanvas.Body>
+        </Offcanvas>
+      )}
+    </>
+  );
+};
+
 export default function Cards({ posts }) {
+  const dispatch = useDispatch();
   const PrevNavigate = useRef(null);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+  const setOpenDrawer = (post) => {
+    setOpen(true);
+    dispatch(set_active_post({ payload: post }));
+  };
+
   function click() {
     PrevNavigate.current.click();
   }
@@ -287,7 +326,11 @@ export default function Cards({ posts }) {
           <CustomCarousel renderedArrow={PrevNavigate}>
             {posts &&
               posts.map((post, index) => (
-                <TopWideCard key={index} post={post}></TopWideCard>
+                <TopWideCard
+                  setPost={setOpenDrawer}
+                  key={index}
+                  post={post}
+                ></TopWideCard>
               ))}
           </CustomCarousel>
         </div>
@@ -300,6 +343,7 @@ export default function Cards({ posts }) {
           navigate={click}
         />
       </div>
+      <Drawer handleClose={handleClose} open={open} />
     </>
   );
 }

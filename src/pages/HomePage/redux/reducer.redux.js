@@ -3,7 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   posts: [],
   user: {},
-  loading: false,
+  ui: {
+    loading: false,
+  },
+  activePost: {},
 };
 
 export const homepageSlice = createSlice({
@@ -12,12 +15,15 @@ export const homepageSlice = createSlice({
   reducers: {
     fetchPosts: (state, action) => {
       state.posts = action.payload;
-      state.loading = false;
+      state.ui.loading = false;
+    },
+    set_active_post: (state, { payload }) => {
+      state.activePost = payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { fetchPosts } = homepageSlice.actions;
+export const { fetchPosts, set_active_post } = homepageSlice.actions;
 
 export default homepageSlice.reducer;

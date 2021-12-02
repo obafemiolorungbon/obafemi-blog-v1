@@ -29,6 +29,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .Bottom-Cards {
@@ -168,6 +169,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .TopSideCard_Icons:hover {
@@ -711,4 +713,12 @@
   cursor: pointer;
   font-size: 0.8vw;
   font-family: var(--romans);
+}
+
+.Spinner {
+  width: 500px;
+  height: 500px;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
