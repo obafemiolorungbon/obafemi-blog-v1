@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "../../components/Cards";
 import Cards from "../../components/Cards/Cards";
 import HomePageLayout from "../../Layouts/HomePageLayout";
 import { useGetPostsByUserQuery } from "../../utils/API_Handler";
@@ -12,7 +13,7 @@ export default function HomePage() {
   return (
     <HomePageLayout>
       {isLoading && <Spinner className="Spinner" animation="grow" />}{" "}
-      {!isLoading && <Cards posts={posts} />}
+      {!isLoading && <Card posts={posts} />}
     </HomePageLayout>
   );
 }
