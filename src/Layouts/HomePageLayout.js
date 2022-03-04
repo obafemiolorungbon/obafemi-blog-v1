@@ -1,4 +1,5 @@
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export default function HomePageLayout(props) {
   return (
@@ -7,3 +8,13 @@ export default function HomePageLayout(props) {
     </main>
   );
 }
+
+HomePageLayout.propTypes = {
+  children: PropTypes.node
+};
+
+HomePageLayout.defaultProps = {
+  children: () => {
+    return <div></div>;
+  }
+};

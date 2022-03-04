@@ -1,5 +1,5 @@
 // const { createSelector, createStructuredSelector } = require('reselect');
-import { createSelector } from "@reduxjs/toolkit";
+import { createSelector } from '@reduxjs/toolkit';
 
 const HomePageObject = (state = {}) => state.homepage;
 

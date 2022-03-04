@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Memoji from "../../assets/avatar4.png";
-import Forward from "../../assets/forward.png";
+import styled from 'styled-components';
+import { Memoji, ForwardIcon } from 'assets/index';
+import PropTypes from 'prop-types';
 
 const TopWideCard = styled.div`
   width: 100%;
@@ -38,7 +38,7 @@ const TopWideCard = styled.div`
       font-weight: 500;
       font-size: 1.5vw;
       line-height: 1.5;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
   }
 
@@ -52,7 +52,7 @@ const TopWideCard = styled.div`
       line-height: 1.5;
       color: #7e8689;
       font-size: 1.1vw;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
   }
 
@@ -83,13 +83,13 @@ const TopWideCard = styled.div`
       font-size: 1.2vw;
       margin-bottom: 4px;
       font-weight: 700;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     p:last-child {
       font-size: 1vw;
       color: #7e8689;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     &_Link {
@@ -128,11 +128,21 @@ export const TopWideCards = ({ post, ...props }) => {
               <p>{date.toDateString()}</p>
             </div>
             <div className="TopWideCard_Link">
-              <img alt="forward" src={Forward} />
+              <img alt="forward" src={ForwardIcon} />
             </div>
           </div>
         </div>
       </div>
     </TopWideCard>
   );
+};
+
+TopWideCards.propTypes = {
+  post: PropTypes.object,
+  setPost: PropTypes.func
+};
+
+TopWideCards.defaultProps = {
+  post: {},
+  setPost: () => {}
 };

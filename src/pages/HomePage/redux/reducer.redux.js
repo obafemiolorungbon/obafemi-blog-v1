@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   posts: [],
   user: {},
   ui: {
-    loading: false,
+    loading: false
   },
-  activePost: {},
+  activePost: {}
 };
 
 export const homepageSlice = createSlice({
-  name: "homepage",
+  name: 'homepage',
   initialState,
   reducers: {
     fetchPosts: (state, action) => {
@@ -19,8 +19,8 @@ export const homepageSlice = createSlice({
     },
     set_active_post: (state, { payload }) => {
       state.activePost = payload;
-    },
-  },
+    }
+  }
 });
 
 // Action creators are generated for each case reducer function

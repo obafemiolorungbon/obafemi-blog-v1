@@ -1,9 +1,5 @@
-import ReactIcon from "../../assets/ReactIcon.png";
-import NodeIcon from "../../assets/NodeIcon.png";
-import MongoIcon from "../../assets/Mongo.png";
-import DSAIcon from "../../../assets/DSA.png";
-import ShitIcon from "../../assets/Shit.png";
-import styled from "styled-components";
+import { ReactIcon, NodeIcon, MongoIcon, DSAIcon, ShitIcon } from 'assets/index';
+import styled from 'styled-components';
 
 const TopSideCard = styled.div`
   width: 15%;
@@ -20,12 +16,14 @@ const TopSideCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width: 760px) {
+      flex-direction: row;
+    }
   }
 
   &_IconContainer {
     display: flex;
     width: 100%;
-    height: 15%;
     align-items: center;
     justify-content: space-between;
   }
@@ -49,7 +47,7 @@ const TopSideCard = styled.div`
     width: 70%;
 
     p {
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 0.9vw;
       color: #7e8689;
     }

@@ -1,10 +1,11 @@
-import { CustomCarousel } from "../../Carousel/CustomElasticCarousel";
+import PropTypes from 'prop-types';
+import { CustomCarousel } from '../../Carousel/CustomElasticCarousel';
 import {
   TopCards,
   TopSideCards,
   TopWideCards,
-  TopWideCardContainer,
-} from "./components";
+  TopWideCardContainer
+} from './components';
 
 export const TopCard = ({ posts, setOpenDrawer }) => {
   return (
@@ -24,4 +25,13 @@ export const TopCard = ({ posts, setOpenDrawer }) => {
       <TopSideCards />
     </TopCards>
   );
+};
+
+TopCard.propTypes = {
+  posts: PropTypes.array,
+  setOpenDrawer: PropTypes.func
+};
+TopCard.defaultProps = {
+  posts: [],
+  setOpenDrawer: () => {}
 };

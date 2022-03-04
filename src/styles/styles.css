@@ -5,7 +5,7 @@
   --inner-height: calc(var(--padding-tb) + var(--padding-tb));
   --inner-width: calc(var(--padding-tb) + var(--padding-tb));
   --card-border-radius: 0.75rem;
-  --romans: "Roboto", sans-serif;
+  --romans: 'Roboto', sans-serif;
   --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -74,7 +74,7 @@
   font-weight: 500;
   font-size: 1.5vw;
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .TopWideCard_Content {
   height: 40%;
@@ -86,7 +86,7 @@
   line-height: 1.5;
   color: #7e8689;
   font-size: 1.1vw;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .TopWideCard_Author {
   height: 25%;
@@ -115,12 +115,12 @@
   font-size: 1.2vw;
   margin-bottom: 4px;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .TopWideCard_Author_Info p:last-child {
   font-size: 1vw;
   color: #7e8689;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .TopWideCard_Link {
   max-width: 5%;
@@ -179,7 +179,7 @@
   width: 70%;
 }
 .TopSideCard_Text p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.9vw;
   color: #7e8689;
 }
@@ -217,7 +217,7 @@
   width: 100%;
   background-color: wheat;
   border-radius: var(--card-border-radius);
-  background-image: url("../assets/cup\ of\ tea.png");
+  background-image: url('../assets/cup\ of\ tea.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -228,7 +228,7 @@
 }
 
 .BottomCardLeftTextHeader p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2vw;
   font-weight: 600;
   line-height: 1.5;
@@ -247,13 +247,13 @@
 }
 
 .BottomCardLeftInfo p:first-child {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1vw;
   font-weight: 600;
   margin-bottom: 4px;
 }
 .BottomCardLeftInfo p:last-child {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.8vw;
   font-weight: 400;
   color: #7e8689;
@@ -448,7 +448,7 @@
   width: 45%;
   height: 100%;
   border-radius: var(--card-border-radius);
-  background-image: url("../assets/music-art-2.png");
+  background-image: url('../assets/music-art-2.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
